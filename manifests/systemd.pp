@@ -22,6 +22,5 @@ define jenkins::systemd(
   systemd::unit_file { "${service}.service":
     content => template("${module_name}/${service}.service.erb"),
     notify  => Service[$service],
-    require => File[$sysv_init],
   }
 }
